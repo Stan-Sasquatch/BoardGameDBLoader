@@ -20,8 +20,10 @@
 	},
 	"dependencies": {
 		"@vercel/postgres": "^0.8.0",
+		"csv-parser": "^3.0.0",
 		"dotenv": "^16.4.5",
 		"drizzle-orm": "^0.31.0",
-		"postgres": "^3.4.4"
+		"postgres": "^3.4.4",
+		"zod": "^3.23.8"
 	}
 }
