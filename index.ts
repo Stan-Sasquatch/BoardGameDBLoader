@@ -1,12 +1,10 @@
-import "dotenv/config";
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
+import { drizzle } from "drizzle-orm/vercel-postgres";
+import { sql } from "@vercel/postgres";
 import { boardGame } from "./schema";
+import "./drizzle/envConfig";
 
 async function test(): Promise<void> {
-	const connectionString = process.env.DATABASE_URL!;
-	const client = postgres(connectionString);
-	const db = drizzle(client);
+	const db = drizzle(sql);
 	const allBoardGames = await db.select().from(boardGame);
 
 	console.log(allBoardGames);
